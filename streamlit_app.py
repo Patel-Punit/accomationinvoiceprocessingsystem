@@ -247,3 +247,6 @@ def pdf_main():
             mime="application/zip"
         ):
             pass
+
+if __name__ == "__main__":
+    pdf_main()
