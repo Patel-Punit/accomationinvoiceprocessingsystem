@@ -410,10 +410,13 @@ def missing_value_check(invoice_df, line_items_df, total_summary_df):
 
     # Convert state codes to strings for consistency
     state_codes = {str(code).zfill(2) for code in state_codes}
+    st.write(state_codes)
+
+    st.write(invoice_df)
 
     # Validate 'place_of_origin' (must always have a valid value)
     invalid_origin = ~invoice_df['place_of_origin'].astype(str).isin(state_codes)
-    st.write(invalid_origin)
+    # st.write(invalid_origin)
 
     # Validate 'place_of_supply' only if there is a value present
     invalid_supply = invoice_df['place_of_supply'].notna() & ~invoice_df['place_of_supply'].astype(str).isin(state_codes)
