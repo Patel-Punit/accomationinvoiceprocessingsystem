@@ -404,12 +404,11 @@ def missing_value_check(invoice_df, line_items_df, total_summary_df):
     ):
         return False, 'Missing Values', 'Fields missing in invoice details.'
 
-    state_codes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 97,
-                   "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+    state_codes = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
                    "25", "26", "27", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "97", "1","2","3","4","5","6","7","8","9"]
 
-    # Convert state codes to strings for consistency
-    state_codes = {str(code).zfill(2) for code in state_codes}
+    # # Convert state codes to strings for consistency
+    # state_codes = {str(code).zfill(2) for code in state_codes}
     st.write(state_codes)
 
     st.write(invoice_df)
