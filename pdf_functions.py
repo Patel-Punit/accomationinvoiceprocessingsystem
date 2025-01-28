@@ -413,6 +413,7 @@ def missing_value_check(invoice_df, line_items_df, total_summary_df):
 
     # Validate 'place_of_origin' (must always have a valid value)
     invalid_origin = ~invoice_df['place_of_origin'].astype(str).isin(state_codes)
+    st.write(invalid_origin)
 
     # Validate 'place_of_supply' only if there is a value present
     invalid_supply = invoice_df['place_of_supply'].notna() & ~invoice_df['place_of_supply'].astype(str).isin(state_codes)
